@@ -1,19 +1,29 @@
 import FunctionSimples from "./components/FunctionSimples";
 import FunctionDupla from "./components/FunctionDupla";
 import Botao from "./layout/Botao";
-import {useState} from 'react';
+import {useState,useEffect} from 'react';
 function Geral(){
     const [variavel,FunctionMudarVariavel]= useState(false)
 
+    const Logar = ()=>{
+        FunctionMudarVariavel(true)
+    }
+    const Deslogar = ()=>{
+        FunctionMudarVariavel(false)
+    }
+
+    useEffect(()=>{
+        console.log("renderizei a primeira vez")
+    },[variavel])
     return(
         <>
             <FunctionSimples/>
             <FunctionDupla/>
             {
-                variavel ? <p>logado</p> : <p>Deslogado</p>
+                variavel ? <p>Logado</p> : <p>Deslogado</p>
             }
-            <Botao classe="botao blue"> Entrar </Botao>
-            <Botao classe="botao red"> Sair </Botao>
+            <Botao tarefa={Logar} classe="botao blue"> Entrar </Botao>
+            <Botao tarefa={Deslogar} classe="botao red"> Sair </Botao>
         </>
     )
 }
