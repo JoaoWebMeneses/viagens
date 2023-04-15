@@ -1,0 +1,19 @@
+.botao{
+    width: 76px;
+    height: 50px;
+    border-radius: 20px;
+    color: white;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.red{
+    background-color: red;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.purple{
+    background-color: purple;
+}
