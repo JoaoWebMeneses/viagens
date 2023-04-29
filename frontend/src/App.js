@@ -11,6 +11,15 @@ function App() {
   }, [])
   function EnvioFormulário(event){
     event.preventDefault();
+    axios.post('http://localhost:3001/api/v1/travels',{travel})
+      .then(res=> {
+        console.log(res.data)
+        setTravels([...travels,res.data])
+        setTravel({
+          nome: ''
+        })
+      })
+      .catch(error=> console.log(error))
   }
   return (
     <div className="App">
@@ -25,7 +34,7 @@ function App() {
         <button>Cadastrar viagem</button>
       </form>
       {
-          travels.map(viagem=><h1 key={viagem.id}>Lugar da viagem: {viagem.nome}</h1>)
+          travels.map(viagem=><h3 key={viagem.id}>Lugar da viagem: {viagem.nome}</h3>)
       }
     </div>
   );
