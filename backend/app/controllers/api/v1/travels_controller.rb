@@ -8,6 +8,12 @@ class Api::V1::TravelsController < ApplicationController
   end
 
   def create
+    @travel = Travel.new(travel_params)
+    if @travel.save
+      render json: @travel
+    else
+      render json: {errors: @travel.errors,message: "Digite f no chat"},status: :unprocessable_entity
+    end
   end
 
   def update
@@ -15,4 +21,8 @@ class Api::V1::TravelsController < ApplicationController
 
   def destroy
   end
+  private
+    def travel_params
+      params.require(:travel).permit(:nome,:data,:price,:desc)
+    end
 end
