@@ -31,6 +31,13 @@ function App() {
           placeholder='Nome da viagem'
           onChange={(e)=>setTravel({...travel,nome: e.target.value})}
         />
+        <textarea
+          required
+          id='desc'
+          onChange={(e)=>setTravel({...travel,data: e.target.value})}  
+          value={travel.desc}
+          placeholder='Endereço da viagem'     
+        />
         <button>Cadastrar viagem</button>
       </form>
       {
