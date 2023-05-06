@@ -2,13 +2,15 @@ function Form(EnvioFormulário, travel, setTravel){
     return(
         <>
             <form onSubmit={EnvioFormulário}>
+                <label> Lugar da viagem</label>
                 <input
                 id='nome'
                 required
                 value={travel.nome}
-                placeholder='Nome da viagem'
+                placeholder='Lugar da viagem'
                 onChange={(e)=>setTravel({...travel,nome: e.target.value})}
                 />
+                <label> Endereço da viagem</label>
                 <textarea
                 required
                 id='desc'
@@ -16,6 +18,7 @@ function Form(EnvioFormulário, travel, setTravel){
                 value={travel.desc}
                 placeholder='Endereço da viagem'     
                 />
+                <label> Data da viagem</label>
                 <input
                 required
                 type='datetime-local'
@@ -24,6 +27,7 @@ function Form(EnvioFormulário, travel, setTravel){
                 placeholder='Data'
                 onChange={(e)=>setTravel({...travel,data: e.target.value})}
                 />
+                <label> Preço da viagem</label>
                 <input
                 id='price'
                 required
