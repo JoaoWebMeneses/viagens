@@ -38,6 +38,22 @@ function App() {
           value={travel.desc}
           placeholder='Endereço da viagem'     
         />
+        <input
+          required
+          type='datetime-local'
+          id='data'
+          value={travel.data}
+          placeholder='Data'
+          onChange={(e)=>setTravel({...travel,data: e.target.value})}
+        />
+        <input
+          id='price'
+          required
+          value={travel.price}
+          placeholder='Preço'
+          type='number'
+          onChange={(e)=>setTravel({...travel,price: e.target.value})}
+        />   
         <button>Cadastrar viagem</button>
       </form>
       {
