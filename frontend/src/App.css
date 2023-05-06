@@ -3,3 +3,10 @@ body{
   color: white;
   background: linear-gradient(45deg, purple,rgb(218, 38, 218));
 }
+.cards{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}

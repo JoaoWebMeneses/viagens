@@ -33,6 +33,7 @@ function App() {
         setTravel={setTravel}
         EnvioFormulário={EnvioFormulário}
       />
+      <div className='cards'>
       {
           travels.map(viagem=>
             <Card
@@ -45,6 +46,7 @@ function App() {
             />  
           )
       }
+      </div>
     </div>
   );
 }
