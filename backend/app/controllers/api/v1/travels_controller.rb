@@ -1,6 +1,6 @@
 class Api::V1::TravelsController < ApplicationController
   def index
-    @travels = Travel.all
+    @travels = Travel.all 
     render json: @travels
   end
 
@@ -12,7 +12,7 @@ class Api::V1::TravelsController < ApplicationController
     if @travel.save
       render json: @travel
     else
-      render json: {errors: @travel.errors,message: "Digite f no chat"},status: :unprocessable_entity
+      render json: {errors: @travel.errors,message: "deu ruim pra cadastrar"},status: :unprocessable_entity
     end
   end
 
@@ -22,8 +22,9 @@ class Api::V1::TravelsController < ApplicationController
   def destroy
     @travel = Travel.find(params[:id])
     @travel.destroy
-    render json: {message: "Sua viagem foi deletada com sucesso"}
+    render json: {message: "Sua viagem foi deletada com sucesso!"}
   end
+  
   private
     def travel_params
       params.require(:travel).permit(:nome,:data,:price,:desc)

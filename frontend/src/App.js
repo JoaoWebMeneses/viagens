@@ -13,7 +13,7 @@ function App() {
   }, [])
 
   const deleteTravel = (id)=>{
-    axios.delete(`http://localhost:3001/api/v1/travel/${id}`)
+    axios.delete(`http://localhost:3001/api/v1/travels/${id}`)
       .then(res=>{
           console.log(res.data)
           setTravels(travel.filter(t=>t.id !== id))
@@ -46,6 +46,7 @@ function App() {
       {
           travels.map(viagem=>
             <Card
+              deleteTravel={deleteTravel}
               key={viagem.id}
               id={viagem.id}
               nome={viagem.nome}

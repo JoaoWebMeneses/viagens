@@ -1,4 +1,5 @@
 import './Card.css'
+import {CgTrash} from 'react-icons/cg'
 function Card(props) {
     const {id,data,desc,price} = props
     return(
@@ -12,8 +13,8 @@ function Card(props) {
                 </div>
                 <div className="bottom">
                     <div className="botoes">
-                        <div>
-                            <button id='delete'>Deletar</button>
+                        <div onClick={()=>props.deleteTravel(id)}>
+                            <CgTrash size={32}/>
                         </div>
                         <div className="icons">
 
