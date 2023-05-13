@@ -16,7 +16,7 @@ function App() {
     axios.delete(`http://localhost:3001/api/v1/travels/${id}`)
       .then(res=>{
           console.log(res.data)
-          setTravels(travel.filter(t=>t.id !== id))
+          setTravels(travels.filter(t=>t.id !== id))
       })
       .catch(erro=>console.log('Erro ao deletar!'))
   }
