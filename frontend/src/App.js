@@ -11,6 +11,15 @@ function App() {
       .then(resposta=> setTravels(resposta.data))
       .catch(erro=> console.error(erro))
   }, [])
+
+  const deleteTravel = (id)=>{
+    axios.delete(`http://localhost:3001/api/v1/travel/${id}`)
+      .then(res=>{
+          console.log(res.data)
+          setTravels(travel.filter(t=>t.id !== id))
+      })
+      .catch(erro=>console.log('Erro ao deletar!'))
+  }
   function EnvioFormulário(event){
     event.preventDefault();
     axios.post('http://localhost:3001/api/v1/travels',{travel})
