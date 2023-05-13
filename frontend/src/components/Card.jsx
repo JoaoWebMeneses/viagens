@@ -6,14 +6,14 @@ function Card(props) {
             <div className='card'>
                 <h1>{props.nome}</h1>
                 <div className="conteudoCard">
-                    <p>{desc}</p>
-                    <p>{data}</p>
-                    <p>{price}</p>
+                    <p>Lugar da Viagem: {desc}</p>
+                    <p>Data da Viagem: {data}</p>
+                    <p>Preço: {price}</p>
                 </div>
                 <div className="bottom">
                     <div className="botoes">
                         <div>
-                            deletar
+                            <button id='delete'>Deletar</button>
                         </div>
                         <div className="icons">
 
