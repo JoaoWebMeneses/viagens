@@ -1,5 +1,5 @@
 import './Form.css';
-function Form({EnvioFormulário, travel, setTravel}){
+function Form({EnvioFormulário, travel, setTravel, id}){
     return(
         <>
         <div className="divForm">
@@ -38,7 +38,7 @@ function Form({EnvioFormulário, travel, setTravel}){
                         type='number'
                         onChange={(e)=>setTravel({...travel,price: e.target.value})}
                     />   
-                    <button type='submit'>Cadastrar viagem</button>
+                    <button>{id ===-1? "Cadastrar": "Editar"} viagem</button>
                 </form>
             </div>
         </>
