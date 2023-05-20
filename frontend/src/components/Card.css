@@ -25,3 +25,38 @@
         opacity: 0;
     }
 }
+.card:hover{
+    border: 1px solid pink
+}
+.card h1{
+    color: mediumvioletred;
+    font-size: 16px;
+    text-align: center;
+}
+.btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.icons{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#trashDelete:hover{
+    color: rgb(185, 76, 76)
+}
+#editIcon:hover{
+    color: azure;
+}
+.conteudoCard{
+    text-align: center;
+    font-size: 16px;
+}
+.conteudoCard .price{
+    font-size: 16px;
+}
