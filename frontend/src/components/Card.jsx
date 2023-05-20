@@ -18,11 +18,15 @@ function Card(props) {
                 <div className="conteudoCard">
                     <p>Lugar da Viagem: {desc}</p>
                     <p>Data da Viagem: {FormatarData(data)}</p>
-                    <p>Preço: {price}</p>
+                    <p className='price'>Preço: {price}</p>
                 </div>
                 <div className="bottom">
-                    <div className="botoes">
-                        <div onClick={()=>deleteMode()}>
+                    <div className="btns">
+                        <div 
+                            onClick={()=>deleteMode()}
+                            id='trashDelete'
+                            className='icons'
+                        >
                             <CgTrash size={32}/>
                         </div>
                         <div className="icons">

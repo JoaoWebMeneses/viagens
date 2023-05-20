@@ -26,11 +26,11 @@
     }
 }
 .card:hover{
-    border: 1px solid pink
+    box-shadow: plum -2px 0px 10px 5px;
 }
 .card h1{
     color: mediumvioletred;
-    font-size: 16px;
+    font-size: 32px;
     text-align: center;
 }
 .btns{
