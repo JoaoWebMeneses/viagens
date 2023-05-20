@@ -17,7 +17,7 @@ class Api::V1::TravelsController < ApplicationController
   end
 
   def update
-    @travel = travel.find(params[:id])
+    @travel = Travel.find(params[:id])
     if @travel.update(travel_params)
       render json: @travel
     else
