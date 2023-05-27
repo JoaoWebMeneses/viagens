@@ -2,7 +2,7 @@ import "./Popup.css"
 
 function Popup(){
     return(
-        <div>
+        <div className="popup">
             Batata
         </div>
     )
