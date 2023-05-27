@@ -99,7 +99,10 @@ function App() {
             />  
           )
       }
-      <Popup/>
+      {showPopup?
+        <Popup/>
+        : null
+      }
       </div>
     </div>
   );
