@@ -35,8 +35,14 @@ function App() {
             desc: ''
           })
           setEditID(-1)
+          setPopupContent({message: res.data.message,color: 'success'})
+          showAndHidePopup()
       })
-      .catch(erro=>console.log('Erro ao deletar!'))
+      .catch(erro=>{
+        console.log('Erro ao deletar!')
+        setPopupContent({message: 'Erro ao deletar',color: 'warning'})
+        showAndHidePopup()
+      })
   }
   const editTravel=(id,travel)=>{
     axios.put(`http://localhost:3001/api/v1/travels/${id}`,{travel})
@@ -48,9 +54,13 @@ function App() {
           return v
         })
         setTravels(newListaDeViagens)
+        setPopupContent({message: 'Sua viagem foi editada com sucesso!',color: 'success'})
+        showAndHidePopup()
       })
       .catch(erro=>{
         console.log(erro)
+        setPopupContent({message: erro.message,color: "warning"})
+        showAndHidePopup()
       })
   }
   function cadastrarViagem(event){
@@ -64,8 +74,14 @@ function App() {
         price: '',
         desc: ''
       })
+      setPopupContent({message: 'Cadastrado com sucesso',color: 'success'})
+      showAndHidePopup()
     })
-    .catch(error=> console.log(error))
+    .catch(error=>{ 
+      console.log(error)
+      setPopupContent({message: 'erro.message',color: 'warning'})
+      showAndHidePopup()
+    })
   }
   function EnvioFormulário(event){
     event.preventDefault();
@@ -107,7 +123,10 @@ function App() {
           )
       }
       {showPopup?
-        <Popup/>
+        <Popup
+          message= {popupContent.message}
+          color= {popupContent.color}
+        />
         : null
       }
       </div>
