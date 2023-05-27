@@ -1,7 +1,9 @@
 body{
   margin: 0;
   color: white;
-  background: linear-gradient(45deg, purple,rgb(218, 38, 218));
+  background-color: #bf51d8;
+  background-image: radial-gradient(circle at center center, #f7f7f7, #bf51d8), repeating-radial-gradient(circle at center center, #f7f7f7, #f7f7f7, 12px, transparent 24px, transparent 12px);
+  background-blend-mode: multiply;
   overflow-x: hidden;
 }
 .cards{
