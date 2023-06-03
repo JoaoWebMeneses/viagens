@@ -1,5 +1,11 @@
 import './Form.css';
+import { useEffect } from 'react';
 function Form({EnvioFormulário, travel, setTravel, id}){
+    
+    useEffect(()=>{
+    
+    },[])
+    
     return(
         <>
         <div className="divForm">
